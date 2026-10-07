@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kahf — Quiet Ascents in a Noisy Trend</title>
+  <meta name="description" content="Premium editorial single-page site exploring the Kahf trend with a top-digital-studio visual language, data-informed storytelling, and production-ready interactivity." />
+  <!-- Google Analytics -->
+  <!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-H4VF7WNZRR'></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H4VF7WNZRR');</script>
+  <style>
+    :root{
+      --bg: #0b0e12;
+      --fg: #e8eef7;
+      --muted: #a6b4c7;
+      --card: #11161c;
+      --brand: #7bd389;
+      --brand-2: #5b8bd6;
+      --grad-1: rgba(123,211,137,.25);
+      --grad-2: rgba(91,139,214,.25);
+      --surface: rgba(255,255,255,.04);
+      --focus: 2px solid #fff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+      color:var(--fg);
+      background: radial-gradient(circle at 20% -10%, rgba(123,211,137,.15), transparent 40%),
+                  radial-gradient(circle at 100% 0%, rgba(91,139,214,.15), transparent 40%),
+                  linear-gradient(#0a0f14, #0b0e12);
+      min-height:100vh;
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    header{position:sticky;top:0;z-index:10;background: rgba(8,12,16,.95);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.4px}
+    .brand-mark{width:28px;height:28px;display:inline-grid;place-items:center;border-radius:8px;background: conic-gradient(from 180deg at 50% 50%, #7bd389, #5b8bd6);box-shadow:0 2px 8px rgba(0,0,0,.4)}
+    .brand-name{font-size:14px; color:#eaf6ff; text-transform:uppercase; opacity:.9}
+    nav ul{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+    nav a{padding:8px 12px;border-radius:8px;color:#e6f3ff;opacity:.9}
+    nav a:hover{background:rgba(255,255,255,.08);opacity:1}
+    .hero{position:relative;overflow:hidden;
+      padding:72px 20px 60px;
+      color:#eaf6ff;
+      background: linear-gradient(135deg, rgba(11,14,18,.0) 0%, rgba(11,14,18,.25) 60%), transparent;
+    }
+    .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:stretch}
+    .eyebrow{color:var(--brand);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
+    h1{font-size: clamp(28px, 4vw, 48px);line-height:1.04;margin:0 0 16px;font-weight:800}
+    p.lead{font-size: clamp(16px, 2.2vw, 20px);color:var(--muted);margin:0 0 20px}
+    .cta{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:999px;background: linear-gradient(135deg, rgba(123,211,137,.9), rgba(91,139,214,.9));color:white;font-weight:700;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(123,211,137,.4)}
+    .cta.secondary{background: rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#eaf6ff}
+    .hero-visual{border-radius:20px;background: linear-gradient(135deg, rgba(123,211,137,.18), rgba(91,139,214,.18));min-height:320px;position:relative;overflow:hidden;box-shadow: inset 0 1px 0 rgba(255,255,255,.08);} 
+    .grid-vis{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px}
+    .card{background: rgba(15,20,26,.7);border-radius:14px;padding:16px 16px 18px;min-height:110px;border:1px solid rgba(255,255,255,.08);backdrop-filter: blur(2px)}
+    .card h4{font-size:14px;margin:0 0 6px;color:#d9e7ff}
+    .card .value{font-size:22px;font-weight:800}
+    .card .sub{font-size:12px;color:var(--muted)}
+    .card.flat{background: rgba(18,22,28,.9)}
+    .grad{position:absolute;inset:0;background: radial-gradient(circle at 20% 0%, rgba(123,211,137,.25), transparent 40%), radial-gradient(circle at 100% 20%, rgba(91,139,214,.25), transparent 40%);pointer-events:none}
+    main{max-width:1100px;margin:0 auto;padding:40px 20px 80px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    section{min-width:0}
+    h2{font-size:22px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .stat{display:flex;align-items:baseline;gap:8px}
+    .stat .num{font-size:28px;font-weight:800}
+    .tag{display:inline-flex;padding:6px 10px;border-radius:999px;background: rgba(123,211,137,.15);border:1px solid rgba(123,211,137,.4);color:#caffd6;font-size:12px}
+    ul.kci{padding-left:20px;margin:8px 0 0}
+    ul.kci li{margin:6px 0}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 20px;background: rgba(2,6,12,.8);margin-top:40px}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-small{font-size:12px;color:var(--muted)}
+    form.input{display:flex;gap:8px;flex-wrap:wrap}
+    input[type="email"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background: rgba(255,255,255,.04);color:#eaf6ff;min-width:240px}
+    input[type="submit"]{padding:12px 16px;border-radius:8px;border:none;background: var(--brand);color:white;font-weight:700;cursor:pointer}
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr;gap:20px}
+      main{grid-template-columns:1fr}
+    }
+    :focus-visible{outline: none; box-shadow: 0 0 0 3px rgba(180,210,255,.6)}
+  </style>
+</head>
+<body>
+  <header aria-label="Main navigation">
+    <div class="nav" role="navigation">
+      <div class="brand" aria-label="Kahf Studio brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" style="font-weight:700; letter-spacing:.08em;">Kahf Studio</span>
+      </div>
+      <nav aria-label="Site">
+        <ul>
+          <li><a href="#about" aria-label="About Kahf">About</a></li>
+          <li><a href="#insights" aria-label="Insights">Insights</a></li>
+          <li><a href="#work" aria-label="Work">Work</a></li>
+          <li><a href="#cta" aria-label="Newsletter">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Hero">
+    <div class="grad" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Trend Spotlight</div>
+        <h1>Kahf: Quiet Elevations in a Noisy Trend</h1>
+        <p class="lead">A premium, data-informed editorial experience that distills the Kahf trend into a tactile, design-forward narrative. Not a template, but a studio-crafted storytelling platform.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
+          <button class="cta" aria-label="Explore Kahf trend">Explore Kahf Trend</button>
+          <button class="cta secondary" aria-label="View methodology">View Methodology</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Data visualization area">
+        <div class="grid-vis" aria-label="Cards showing key kahf metrics">
+          <div class="card" role="article" aria-label="Metric one">
+            <h4>Kahf Mentions</h4>
+            <div class="value" style="font-variant-numeric: tabular-nums;">5,000</div>
+            <div class="sub">Recent spike in search interest</div>
+          </div>
+          <div class="card" role="article" aria-label="Metric two">
+            <h4>Trend Growth</h4>
+            <div class="value" style="color:#a6ffd4;">+1,000%</div>
+            <div class="sub">Year-over-date acceleration</div>
+          </div>
+          <div class="card" role="article" aria-label="Metric three">
+            <h4>Impact Space</h4>
+            <div class="value" style="color:#d6e8ff;">Editorial</div>
+            <div class="sub">Cross-disciplinary influence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Kahf</h2>
+      <p class="muted" style="margin-top:0;">
+        Kahf represents a mode of premium editorial experimentation: a disciplined, data-informed lens filtered through a refined design system. This page demonstrates a production-ready interpretation—clear typography, measured motion, and a narrative arc that respects reader time.
+      </p>
+      <div class="card flat" style="margin-top:14px;">
+        <h4>Brand Concept</h4>
+        <p style="margin:0;color:#dbe7f8;">
+          Kahf embodies quiet ascent — a visual language that pairs architectural grid with soft textures, balancing clarity with curiosity.
+        </p>
+      </div>
+    </section>
+
+    <section id="insights" aria-labelledby="insights-title">
+      <h2 id="insights-title">Insights & Narrative Architecture</h2>
+      <p class="muted" style="margin-top:0;">
+        The Kahf opportunity translates trend velocity into editorial chapters: Context, Signals, and Implications. Each chapter is a self-contained data narrative, designed for deep engagement without fatigue.
+      </p>
+      <div class="grid-vis" style="grid-template-columns:repeat(2,1fr); gap:14px; margin-top:8px;" aria-label="Editorial chapters grid">
+        <div class="card" aria-label="Chapter context">
+          <h4>Chapter 01 — Context</h4>
+          <div class="value" style="font-size:20px;">From buzz to texture</div>
+          <div class="sub">We map how a trend moves from surface signals to durable ideas.</div>
+        </div>
+        <div class="card" aria-label="Chapter signals">
+          <h4>Chapter 02 — Signals</h4>
+          <div class="value" style="font-size:20px;">Signals matrix</div>
+          <div class="sub">A compact grid of data blocks showing momentum, polarity, and velocity.</div>
+        </div>
+      </div>
+      <ul class="kci" aria-label="Key capabilities">
+        <li>Editorial typography with generous line length and editorial rhythm</li>
+        <li>Accessible navigation and focus states across devices</li>
+        <li>Subtle micro-interactions that feel crafted, not procedural</li>
+      </ul>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <h2 id="work-title">Production-Ready Benefits</h2>
+      <div class="grid-vis" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card" aria-label="Card: visual system">
+          <h4>Refined Visual System</h4>
+          <div class="value" style="font-size:18px;">Type-first, grid-forward</div>
+          <div class="sub">A typography hierarchy that scales from mobile to desktop with precision.</div>
+        </div>
+        <div class="card" aria-label="Card: data storytelling">
+          <h4>Data-Driven Narrative</h4>
+          <div class="value" style="font-size:18px;">Meaningful cards</div>
+          <div class="sub">Cards and data blocks are purposeful, not decorative.</div>
+        </div>
+        <div class="card" aria-label="Card: accessibility">
+          <h4>Accessible & Fast</h4>
+          <div class="value" style="font-size:18px;">Keyboard ready</div>
+          <div class="sub">High contrast, logical hierarchy, and responsive controls.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="cta" aria-label="Newsletter signup" style="padding:0 20px 40px;">
+    <form class="input" onsubmit="event.preventDefault(); subscribeEmail();" aria-label="Newsletter signup form" style="max-width:1100px;margin:0 auto;background: rgba(255,255,255,.04);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,.08)">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;width:100%">
+        <h2 style="margin:0;font-size:20px;flex:1 1 100%">Join Kahf Studio newsletter</h2>
+        <span class="muted" style="flex:0 0 auto">Monthly digest of design-led trend narratives</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;flex:1 1 100%">
+        <input type="email" id="email" placeholder="Your email" aria-label="Email address" required />
+        <input type="submit" value="Subscribe" aria-label="Subscribe to newsletter" />
+      </div>
+    </form>
+  </section>
+
+  <footer aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand" style="display:flex;align-items:center;gap:12px">
+        <span class="brand-mark" aria-hidden="true" style="width:20px;height:20px;border-radius:6px"></span>
+        <span style="font-weight:700">Kahf Studio</span>
+      </div>
+      <div class="footer-small" aria-label="Footer legal">© 2026 Kahf Studio. All rights reserved. This page is a standalone production-ready demonstration for the Kahf trend.</div>
+    </div>
+  </footer>
+
+  <script>
+    function subscribeEmail(){
+      const el = document.getElementById('email');
+      const value = el.value || '';
+      if(!value.includes('@')){ alert('Please enter a valid email.'); return; }
+      // lightweight mock submit
+      alert('Thanks for subscribing, ' + value + ' — welcome to Kahf Studio.');
+      el.value = '';
+    }
+  </script>
+</body>
+</html>
